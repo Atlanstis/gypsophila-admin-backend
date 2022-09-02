@@ -1,9 +1,9 @@
-const util = require('util');
-
 module.exports = () => {
   return (err, req, res, next) => {
-    res.status(500).json({
-      message: util.format(err),
+    console.log(err);
+    res.status(200).json({
+      code: 500,
+      message: err.message,
     });
   };
 };

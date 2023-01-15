@@ -4,6 +4,7 @@ specifiers:
   '@commitlint/config-conventional': ^17.4.2
   '@nestjs/cli': ^9.0.0
   '@nestjs/common': ^9.0.0
+  '@nestjs/config': ^2.2.0
   '@nestjs/core': ^9.0.0
   '@nestjs/platform-express': ^9.0.0
   '@nestjs/platform-fastify': ^9.2.1
@@ -17,6 +18,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.0.0
   commitizen: ^4.2.6
   commitlint: ^17.4.2
+  cross-env: ^7.0.3
   cz-git: ^1.4.1
   eslint: ^8.0.1
   eslint-config-prettier: ^8.3.0
@@ -36,15 +38,18 @@ specifiers:
   tsconfig-paths: 4.1.1
   typescript: ^4.7.4
   webpack: ^5.0.0
+  yaml: ^2.2.1
 
 dependencies:
   '@nestjs/common': 9.2.1_mnr6j2del53muneqly5h4y27ai
+  '@nestjs/config': 2.2.0_b4pxbpa7chblgbyake5iz5rdmu
   '@nestjs/core': 9.2.1_e6la6qvsclaae2becwjnmfvsuq
   '@nestjs/platform-express': 9.2.1_hjcqpoaebdr7gdo5hgc22hthbe
   '@nestjs/platform-fastify': 9.2.1_hjcqpoaebdr7gdo5hgc22hthbe
   fastify: 4.11.0
   reflect-metadata: 0.1.13
   rxjs: 7.8.0
+  yaml: 2.2.1
 
 devDependencies:
   '@commitlint/config-conventional': 17.4.2
@@ -59,6 +64,7 @@ devDependencies:
   '@typescript-eslint/parser': 5.48.1_iukboom6ndih5an6iafl45j2fe
   commitizen: 4.2.6
   commitlint: 17.4.2
+  cross-env: 7.0.3
   cz-git: 1.4.1
   eslint: 8.31.0
   eslint-config-prettier: 8.6.0_eslint@8.31.0
@@ -1092,6 +1098,22 @@ packages:
       rxjs: 7.8.0
       tslib: 2.4.1
       uuid: 9.0.0
+
+  /@nestjs/config/2.2.0_b4pxbpa7chblgbyake5iz5rdmu:
+    resolution: {integrity: sha512-78Eg6oMbCy3D/YvqeiGBTOWei1Jwi3f2pSIZcZ1QxY67kYsJzTRTkwRT8Iv30DbK0sGKc1mcloDLD5UXgZAZtg==}
+    peerDependencies:
+      '@nestjs/common': ^7.0.0 || ^8.0.0 || ^9.0.0
+      reflect-metadata: ^0.1.13
+      rxjs: ^6.0.0 || ^7.2.0
+    dependencies:
+      '@nestjs/common': 9.2.1_mnr6j2del53muneqly5h4y27ai
+      dotenv: 16.0.1
+      dotenv-expand: 8.0.3
+      lodash: 4.17.21
+      reflect-metadata: 0.1.13
+      rxjs: 7.8.0
+      uuid: 8.3.2
+    dev: false
 
   /@nestjs/core/9.2.1_e6la6qvsclaae2becwjnmfvsuq:
     resolution: {integrity: sha512-a9GkXuu8uXgNgCVW+17iI8kLCltO+HwHpU2IhR+32JKnN2WEQ1YEWU4t3GJ2MNq44YkjIw9zrKvFkjJBlYrNbQ==}
@@ -2492,6 +2514,14 @@ packages:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
     dev: true
 
+  /cross-env/7.0.3:
+    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
+    engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
+    hasBin: true
+    dependencies:
+      cross-spawn: 7.0.3
+    dev: true
+
   /cross-spawn/7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
     engines: {node: '>= 8'}
@@ -2645,6 +2675,16 @@ packages:
     dependencies:
       is-obj: 2.0.0
     dev: true
+
+  /dotenv-expand/8.0.3:
+    resolution: {integrity: sha512-SErOMvge0ZUyWd5B0NXMQlDkN+8r+HhVUsxgOO7IoPDOdDRD2JjExpN6y3KnFR66jsJMwSn1pqIivhU5rcJiNg==}
+    engines: {node: '>=12'}
+    dev: false
+
+  /dotenv/16.0.1:
+    resolution: {integrity: sha512-1K6hR6wtk2FviQ4kEiSjFiH5rpzEVi8WW0x96aztHVMhEspNpc4DVOUTEHtEva5VThQ8IaBX1Pe4gSzpVVUsKQ==}
+    engines: {node: '>=12'}
+    dev: false
 
   /eastasianwidth/0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
@@ -4432,7 +4472,6 @@ packages:
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /log-symbols/4.1.0:
     resolution: {integrity: sha512-8XPvpAA8uyhfteu8pIvQxpJZ7SYYdpUivZpGy6sFsBuKRY/7rQGavedeB8aK+Zkyq6upMFVL/9AW6vOYzfRyLg==}
@@ -6005,6 +6044,11 @@ packages:
     resolution: {integrity: sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=}
     engines: {node: '>= 0.4.0'}
 
+  /uuid/8.3.2:
+    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+    hasBin: true
+    dev: false
+
   /uuid/9.0.0:
     resolution: {integrity: sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==}
     hasBin: true
@@ -6193,7 +6237,6 @@ packages:
   /yaml/2.2.1:
     resolution: {integrity: sha512-e0WHiYql7+9wr4cWMx3TVQrNwejKaEe7/rHNmQmqRjazfOP5W8PB6Jpebb5o6fIapbz9o9+2ipcaTM2ZwDI6lw==}
     engines: {node: '>= 14'}
-    dev: true
 
   /yargs-parser/20.2.9:
     resolution: {integrity: sha512-y11nGElTIV+CT3Zv9t7VKl+Q3hTQoT9a1Qzezhhl6Rp21gJ/IVTW7Z3y9EWXhuUBC2Shnf+DX0antecpAwSP8w==}

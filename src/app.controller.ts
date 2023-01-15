@@ -1,14 +1,17 @@
 import { Controller, Get } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { AppService } from './app.service';
-import { BusinessException } from './core';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(
+    private readonly appService: AppService,
+    private readonly configService: ConfigService,
+  ) {}
 
   @Get()
   getHello(): string {
-    throw new BusinessException('你这个参数错了');
+    console.log(this.configService.get('ENVIRONMENT'));
     return this.appService.getHello();
   }
 }

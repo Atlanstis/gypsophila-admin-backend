@@ -1,6 +1,6 @@
 import { parse } from 'yaml';
-const path = require('path');
-const fs = require('fs');
+import * as path from 'path';
+import * as fs from 'fs';
 
 // 获取项目运行环境
 function getEnv() {
